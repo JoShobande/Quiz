@@ -1,8 +1,9 @@
 import { Component, signal } from '@angular/core';
+import { StartScreen } from './components/start-screen/start-screen';
 
 @Component({
   selector: 'app-root',
-  imports: [],
+  imports: [StartScreen],
   templateUrl: './app.html',
   styleUrl: './app.scss',
 })

@@ -1,5 +1,5 @@
 import { Service } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, map } from 'rxjs';
 import { QuizState } from '../models/quiz';
 import { Question } from '../models/question';
 
@@ -14,6 +14,15 @@ export class Quiz {
     answeredQuestions: [],
     phase: 'start',
   });
+  state$ = this.stateSubject.asObservable();
+
+  currentQuestion$ = this.state$.pipe(
+    map((state) => state.questions[state.currentQuestionIndex] ?? null),
+  );
+
+  isLastQuestion$ = this.state$.pipe(
+    map((state) => state.currentQuestionIndex >= state.questions.length - 1),
+  );
 
   startQuiz(questions: Question[]) {
     this.stateSubject.next({
@@ -54,6 +63,4 @@ export class Quiz {
       phase: isLastQuestion ? 'results' : state.phase,
     });
   }
-
-  state$ = this.stateSubject.asObservable();
 }

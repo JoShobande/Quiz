@@ -1,0 +1,102 @@
+[
+  {
+    "id": "q1",
+    "text": "What language does Angular primarily use?",
+    "options": [
+      { "id": "q1-a", "text": "TypeScript", "isCorrect": true },
+      { "id": "q1-b", "text": "Python", "isCorrect": false },
+      { "id": "q1-c", "text": "Ruby", "isCorrect": false },
+      { "id": "q1-d", "text": "Java", "isCorrect": false }
+    ]
+  },
+  {
+    "id": "q2",
+    "text": "Which company created React?",
+    "options": [
+      { "id": "q2-a", "text": "Google", "isCorrect": false },
+      { "id": "q2-b", "text": "Meta (Facebook)", "isCorrect": true },
+      { "id": "q2-c", "text": "Microsoft", "isCorrect": false },
+      { "id": "q2-d", "text": "Amazon", "isCorrect": false }
+    ]
+  },
+  {
+    "id": "q3",
+    "text": "What does HTML stand for?",
+    "options": [
+      { "id": "q3-a", "text": "Hyperlinks and Text Markup Language", "isCorrect": false },
+      { "id": "q3-b", "text": "Hyper Text Markup Language", "isCorrect": true },
+      { "id": "q3-c", "text": "Home Tool Markup Language", "isCorrect": false },
+      { "id": "q3-d", "text": "Hyper Transfer Markup Language", "isCorrect": false }
+    ]
+  },
+  {
+    "id": "q4",
+    "text": "In RxJS, what type of object holds a current value and emits it to new subscribers immediately?",
+    "options": [
+      { "id": "q4-a", "text": "Subject", "isCorrect": false },
+      { "id": "q4-b", "text": "BehaviorSubject", "isCorrect": true },
+      { "id": "q4-c", "text": "ReplaySubject", "isCorrect": false },
+      { "id": "q4-d", "text": "AsyncSubject", "isCorrect": false }
+    ]
+  },
+  {
+    "id": "q5",
+    "text": "What does CSS stand for?",
+    "options": [
+      { "id": "q5-a", "text": "Cascading Style Sheets", "isCorrect": true },
+      { "id": "q5-b", "text": "Computer Style Sheets", "isCorrect": false },
+      { "id": "q5-c", "text": "Creative Style System", "isCorrect": false },
+      { "id": "q5-d", "text": "Colorful Style Sheets", "isCorrect": false }
+    ]
+  },
+  {
+    "id": "q6",
+    "text": "Which HTTP method is typically used to retrieve data without modifying it?",
+    "options": [
+      { "id": "q6-a", "text": "POST", "isCorrect": false },
+      { "id": "q6-b", "text": "DELETE", "isCorrect": false },
+      { "id": "q6-c", "text": "GET", "isCorrect": true },
+      { "id": "q6-d", "text": "PUT", "isCorrect": false }
+    ]
+  },
+  {
+    "id": "q7",
+    "text": "What is the default port for a locally served Angular app via `ng serve`?",
+    "options": [
+      { "id": "q7-a", "text": "3000", "isCorrect": false },
+      { "id": "q7-b", "text": "8080", "isCorrect": false },
+      { "id": "q7-c", "text": "4200", "isCorrect": true },
+      { "id": "q7-d", "text": "5000", "isCorrect": false }
+    ]
+  },
+  {
+    "id": "q8",
+    "text": "In TypeScript, which operator returns a fallback only when the left side is null or undefined?",
+    "options": [
+      { "id": "q8-a", "text": "||", "isCorrect": false },
+      { "id": "q8-b", "text": "??", "isCorrect": true },
+      { "id": "q8-c", "text": "&&", "isCorrect": false },
+      { "id": "q8-d", "text": "?.", "isCorrect": false }
+    ]
+  },
+  {
+    "id": "q9",
+    "text": "What does JSON stand for?",
+    "options": [
+      { "id": "q9-a", "text": "JavaScript Object Notation", "isCorrect": true },
+      { "id": "q9-b", "text": "Java Standard Object Notation", "isCorrect": false },
+      { "id": "q9-c", "text": "JavaScript Oriented Nodes", "isCorrect": false },
+      { "id": "q9-d", "text": "Joined Script Object Notation", "isCorrect": false }
+    ]
+  },
+  {
+    "id": "q10",
+    "text": "Which array method returns the first matching element, or undefined if none match?",
+    "options": [
+      { "id": "q10-a", "text": "filter", "isCorrect": false },
+      { "id": "q10-b", "text": "map", "isCorrect": false },
+      { "id": "q10-c", "text": "find", "isCorrect": true },
+      { "id": "q10-d", "text": "forEach", "isCorrect": false }
+    ]
+  }
+]
