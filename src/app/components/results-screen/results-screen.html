@@ -1,1 +1,42 @@
-<p>results-screen works!</p>
+@if (vm$ | async; as vm) {
+  <div class="page">
+    <div class="summary-card">
+      <div class="emoji">👍</div>
+      <p class="eyebrow">Quiz Complete</p>
+      <h1 class="score-display">{{ vm.score }} / {{ vm.totalQuestions }}</h1>
+      <p class="message">Solid effort! You know your stuff.</p>
+      <button class="restart-button" (click)="onClickRestart()">Restart Quiz</button>
+    </div>
+
+    <div class="results-list">
+      @for (result of vm.answeredQuestions; track result.questionNumber) {
+        <div
+          class="result-row"
+          [class.correct]="result.wasCorrect"
+          [class.incorrect]="!result.wasCorrect"
+        >
+          <div class="result-header">
+            <span class="question-text"
+              >Q{{ result.questionNumber }}. {{ result.questionText }}</span
+            >
+            @if (result.wasCorrect) {
+              <span class="icon correct-icon">✅</span>
+            } @else {
+              <span class="icon incorrect-icon">❌</span>
+            }
+          </div>
+
+          <p class="your-answer">
+            Your answer: <strong>{{ result.yourAnswerText }}</strong>
+          </p>
+
+          @if (!result.wasCorrect) {
+            <p class="correct-answer">
+              Correct answer: <strong>{{ result.correctAnswerText }}</strong>
+            </p>
+          }
+        </div>
+      }
+    </div>
+  </div>
+}

@@ -1,1 +1,9 @@
-<app-start-screen />
+@if (vm$ | async; as vm) {
+  @if (vm.phase === 'start') {
+    <app-start-screen />
+  } @else if (vm.phase === 'question') {
+    <app-question-card />
+  } @else if (vm.phase === 'results') {
+    <app-results-screen />
+  }
+}

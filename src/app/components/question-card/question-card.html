@@ -1,1 +1,46 @@
-<p>question-card works!</p>
+@if (vm$ | async; as vm) {
+  @if (vm.currentQuestion) {
+    <div class="page">
+      <div class="header-row">
+        <span>Question {{ vm.currentQuestionNumber }} of {{ vm.totalQuestions }}</span>
+        <span>Score: {{ vm.score }}</span>
+      </div>
+      <div class="progress-bar">
+        <div
+          class="progress-fill"
+          [style.width]="(vm.currentQuestionNumber / vm.totalQuestions) * 100 + '%'"
+        ></div>
+      </div>
+      <div class="card">
+        <h2>{{ vm.currentQuestion.text }}</h2>
+
+        @for (option of vm.currentQuestion.options; track option.id) {
+          <button
+            class="option"
+            [class.correct]="vm.isAnswered && option.isCorrect"
+            [class.incorrect]="
+              vm.isAnswered && option.id === vm.selectedOptionId && !option.isCorrect
+            "
+            [class.muted]="vm.isAnswered && option.id !== vm.selectedOptionId && !option.isCorrect"
+            [disabled]="vm.isAnswered"
+            (click)="onSelectAnswer(option.id)"
+          >
+            {{ option.text }}
+          </button>
+        }
+
+        <!-- feedback box goes here next -->
+        @if (vm.isAnswered) {
+          <div class="feedback" [class.correct]="vm.wasCorrect">
+            @if (vm.wasCorrect) {
+              <p>Correct! Nicely done.</p>
+            } @else {
+              <p>Not quite — the correct answer is "{{ vm.correctOptionText }}".</p>
+            }
+            <button (click)="onSelectNext()">Next Question</button>
+          </div>
+        }
+      </div>
+    </div>
+  }
+}

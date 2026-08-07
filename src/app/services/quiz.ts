@@ -16,13 +16,13 @@ export class Quiz {
   });
   state$ = this.stateSubject.asObservable();
 
-  currentQuestion$ = this.state$.pipe(
-    map((state) => state.questions[state.currentQuestionIndex] ?? null),
-  );
+  // currentQuestion$ = this.state$.pipe(
+  //   map((state) => state.questions[state.currentQuestionIndex] ?? null),
+  // );
 
-  isLastQuestion$ = this.state$.pipe(
-    map((state) => state.currentQuestionIndex >= state.questions.length - 1),
-  );
+  // isLastQuestion$ = this.state$.pipe(
+  //   map((state) => state.currentQuestionIndex >= state.questions.length - 1),
+  // );
 
   startQuiz(questions: Question[]) {
     this.stateSubject.next({
@@ -61,6 +61,19 @@ export class Quiz {
       isAnswered: false,
       selectedOptionId: null,
       phase: isLastQuestion ? 'results' : state.phase,
+    });
+  }
+
+  resetQuiz() {
+    const state = this.stateSubject.value;
+    this.stateSubject.next({
+      ...state,
+      currentQuestionIndex: 0,
+      selectedOptionId: null,
+      isAnswered: false,
+      score: 0,
+      answeredQuestions: [],
+      phase: 'question',
     });
   }
 }
